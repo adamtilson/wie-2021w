@@ -285,7 +285,7 @@ We can also turn off the thruster effects if the user has run out of fuel with..
 
 Finally, if the user lands safely, we wish to notify them how much fuel they have left. This acts as a high score.
 
-This is a crazy long blong, so it's included in the starter code:
+This is a crazy long line, so it's included in the starter code:
 
 ![Fuel 5](res/fuel-5.png)
 
