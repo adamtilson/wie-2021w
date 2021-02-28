@@ -277,19 +277,17 @@ Speaking of which, once we run out of fuel, we want to disable movement. We can 
 
 We should use this guard to only allow the user to activate the thursters if there is fuel remaining.
 
-![Fuel 4](res/fuel-4.png)
-
 Where should this go?
 
 We can also turn off the thruster effects if the user has run out of fuel with...
 
-![Fuel 5](res/fuel-5.png)
+![Fuel 4](res/fuel-4.png)
 
 Finally, if the user lands safely, we wish to notify them how much fuel they have left. This acts as a high score.
 
 This is a crazy long blong, so it's included in the starter code:
 
-![Fuel 6](res/fuel-6.png)
+![Fuel 5](res/fuel-5.png)
 
 And that's it! You now have a more challenging game, in which you can improve with each play.
 
