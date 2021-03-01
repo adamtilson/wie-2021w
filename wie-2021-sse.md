@@ -14,7 +14,7 @@
 
 ## Introduction
 
-In this lab we will be using Microsoft MakeCode Arcade to make a Lunar Lander type game. This variation on a 1979 Atari arcade game has the player attempt to land a space probe on the moon by locating the goal and then very slowly maneuvering the lander into the landing zone so that it is not destroyed. Movement is tricky since it is based on physics which relys on rotation, thrusters and gravity. We will deviate from the original in that we will not use rotation, and instead have horizontal and vertical thrusters, which work better with the 2D pixel nature of the engine.
+In this lab we will be using Microsoft MakeCode Arcade to make a Lunar Lander type game. This variation on a 1979 Atari arcade game has the player attempt to land a space probe on the moon by locating the goal and then very slowly maneuvering the lander into the landing zone so that it is not destroyed. Movement is tricky since it is based on physics which relies on rotation, thrusters and gravity. We will deviate from the original in that we will not use rotation, and instead have horizontal and vertical thrusters, which work better with the 2D pixel nature of the engine.
 
 ## Getting started...
 
@@ -54,10 +54,11 @@ Before we get too far, a few high level programming concepts to understand:
 - Sometimes you will want code to run only in certain situations, which can be guarded against using `if` blocks
     - we can also run code if in the opposite condition using the `else` part of if blocks.
 - Code which will be frequently reused should be nested in functions, which group together code that serves similar purposes
+    - These functions can then be called later on to run this chunk of code
 
 ## Testing our game
 
-Every line of code we write, our game will compile and run in the simulator on the left.
+Every line of code we write, our game will compile and run in the simulator on the left. We can test it with the on screen controls, or a keyboard, using the arrow keys and `z` key for the `A button`.
 
 ## What we need to do...
 
@@ -65,7 +66,7 @@ Not much is happening in our game work just yet, we just have some simple assets
 
 ### Handle user input
 
-Let's start by allowing the user input to be read in the game. We'll use a simple, inefficient, way of checking for input called "polling", in which we check each game update to see if a button is pressed...
+Let's start by allowing the user input to be read in the game. We'll use a simple way of checking for input called "polling", in which we check each game update to see if a button is pressed...
 
 Let's add an `if` block to the `on_game_update` function
 
@@ -79,7 +80,7 @@ Let's change the button to "up"
 
 ![input polling 3](res/input-polling-3.png)
 
-Now any code inside of this `if` block will run every game update that the up button is pressed. For now, let's just call a function here...
+Now any code inside of this `if` block will run every game update that the up button is pressed. For now, let's and a function for this input here...
 
 ![input polling 4](res/input-polling-4.png)
 
@@ -137,7 +138,7 @@ Be sure to also call `physics` in the game update function!
 
 If you test your code now, your ship should fall right down and through the bottom of the screen! We'll fix that in the next section.
 
-Finally, let's add the ability to move our space ship using up, left and right inputs. I've provided code blocks for this, they just need to be dragged into the correct slot.
+Finally, let's add the ability to move our space ship using up, left and right inputs. I've provided code blocks for this, they just need to be dragged into the correct slot of the input functions we previously created.
 
 Challenge 2: Using the world axes shown above, figure out which of the three velocity adjustment statements go with which input function. Solution below, so don't peek!
 
@@ -169,7 +170,7 @@ To change the ship sprite, click on...
 
 ![worldbuilding 5](res/worldbuilding-5.png)
 
-Which will open the sprite editor. You can use the colors and tools on the left to draw on your sprite. I personally dig the green triangle which reminds me of Atari quadriscan, but to each their own!
+Which will open the sprite editor. You can use the colors and tools on the left to draw on your sprite. I personally dig the green triangle which reminds me of Atari Quadrascan, but to each their own!
 
 You can even use a pre generated sprite by clicking on gallery.
 
@@ -201,7 +202,7 @@ When you test your game, you will see that your player now is in a much more int
 
 ### Handle collisions
 
-So far our code has always started from the `on start` or the `on game update` functions. But we can also have code run if something specific happens in the game, like a player colling with a wall tile we just added. Let's create a code block to test for this...
+So far our code has always started from the `on start` or the `on game update` functions. But we can also have code run if something specific happens in the game, like a player colliding with a wall tile we just added. This is called a `callback` function. Let's create a code block to test for this...
 
 ![Collision 1](res/collision-1.png)
 
@@ -233,7 +234,7 @@ Now, we only want the player to win if they are going slow enough. Let's add an 
 
 ![Success 3](res/success-3.png)
 
-We want to check if one variable, v_y is less than a constant, MAX_WIN_V_Y. First we'll add the compartor block...
+We want to check if one variable, v_y is less than a constant, MAX_WIN_V_Y. First we'll add the comparator block...
 
 ![Success 4](res/success-4.png)
 
@@ -289,7 +290,7 @@ This is a crazy long line, so it's included in the starter code:
 
 ![Fuel 5](res/fuel-5.png)
 
-And that's it! You now have a more challenging game, in which you can improve with each play.
+And that's it! You now have a more challenging game, in which the player can improve with each play.
 
 ## Where to go from here...
 
@@ -297,4 +298,4 @@ You could try adding different levels to the game.
 
 Play with the constants and see if you can find a more satisfying gameplay experience, or additional challenge.
 
-I hope you have enjoyed this lab!
+I hope you have enjoyed and learned something in this lab!
